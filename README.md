@@ -4,8 +4,8 @@ News Pulse pulls live articles from 4 news RSS feeds, groups articles about the 
 
 | | Link |
 |---|---|
-| Live frontend | https://YOUR-APP.vercel.app |
-| Live backend API | https://YOUR-API.onrender.com |
+| Live frontend | https://news-pulse-zeta-ten.vercel.app |
+| Live backend API | https://news-pulse-api-huni.onrender.com |
 | Video walkthrough | YOUR-VIDEO-LINK |
 
 ---
