@@ -1,0 +1,24 @@
+# Runs the scraper every 2 hours so the timeline stays up to date.
+# Needs the repository secret MONGODB_URI.
+name: scrape-news
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scraper
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python run.py
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
